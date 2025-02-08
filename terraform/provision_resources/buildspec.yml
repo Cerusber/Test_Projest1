@@ -23,10 +23,10 @@ phases:
 
   pre_build:
     commands:
-      - pwd # Print the current working directory
-      - ls -la # List all files in the current directory
-      - cd ./terraform/provision_resources
-      - ls -la
+      - pwd
+      - ls -la /codebuild/output/src
+      - ls -la /codebuild/output/src/terraform/provision_resources
+      - cd /codebuild/output/src/terraform/provision_resources || exit 1
       - echo "Executing terraform init..."
 
       - terraform init

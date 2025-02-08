@@ -25,6 +25,7 @@ phases:
     commands:
       - pwd
       - ls -la /codebuild/output/src
+      - find / -name "main.tf
       - ls -la /codebuild/output/src/terraform/provision_resources
       - cd /codebuild/output/src/terraform/provision_resources || exit 1
       - echo "Executing terraform init..."

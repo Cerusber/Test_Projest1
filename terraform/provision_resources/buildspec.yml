@@ -13,6 +13,7 @@ phases:
       - apt-get update -y
       - apt-get install -y curl unzip
       - echo "Installing Terraform version ${TERRAFORM_VERSION}..."
+      - cd /tmp
       - curl -O https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
       - unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip
       - chmod +x terraform
@@ -22,10 +23,12 @@ phases:
 
   pre_build:
     commands:
-      - pwd
-      - ls -la
-      - cd terraform/provision_resources
-      - ls -la
+      - echo "Finding the Terraform directory..."
+      - export TERRAFORM_DIR=$(find /codebuild/output -type d -name "provision_resources" | head -n 1)
+      - if [ -z "$TERRAFORM_DIR" ]; then echo "Terraform directory not found! Exiting..."; exit 1; fi
+      - echo "Terraform directory found: $TERRAFORM_DIR"
+      - cd $TERRAFORM_DIR
+      - ls -la # Confirm that the correct files are present
       - echo "Executing terraform init..."
 
       - terraform init

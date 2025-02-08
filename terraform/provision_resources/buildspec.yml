@@ -13,7 +13,6 @@ phases:
       - apt-get update -y
       - apt-get install -y curl unzip
       - echo "Installing Terraform version ${TERRAFORM_VERSION}..."
-      - cd /tmp
       - curl -O https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
       - unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip
       - chmod +x terraform
@@ -24,9 +23,8 @@ phases:
   pre_build:
     commands:
       - pwd
-      - find / -name "main.tf"
       - ls -la
-      - cd terraform/provision_resources || exit 1
+      - cd terraform/provision_resources
       - ls -la
       - echo "Executing terraform init..."
 

@@ -24,10 +24,10 @@ phases:
   pre_build:
     commands:
       - pwd
-      - ls -la /codebuild/output/src
-      - find / -name "main.tf
-      - ls -la /codebuild/output/src/terraform/provision_resources
-      - cd /codebuild/output/src/terraform/provision_resources || exit 1
+      - find / -name "main.tf"
+      - ls -la
+      - cd terraform/provision_resources || exit 1
+      - ls -la
       - echo "Executing terraform init..."
 
       - terraform init

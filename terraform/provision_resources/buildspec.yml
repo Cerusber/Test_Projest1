@@ -28,9 +28,8 @@ phases:
       - if [ -z "$TERRAFORM_DIR" ]; then echo "Terraform directory not found! Exiting..."; exit 1; fi
       - echo "Terraform directory found: $TERRAFORM_DIR"
       - cd $TERRAFORM_DIR
-      - ls -la # Confirm that the correct files are present
+      - ls -la
       - echo "Executing terraform init..."
-
       - terraform init
 
   build:
@@ -40,7 +39,7 @@ phases:
       - echo "Executing terraform apply..."
       - terraform apply -auto-approve
       - echo "Terraform apply completed. Waiting for 10 minutes before destroy..."
-      - sleep 600 # Wait for 10 minutes (600 seconds)
+      - sleep 600
 
   post_build:
     commands:

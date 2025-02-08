@@ -23,6 +23,7 @@ phases:
 
   pre_build:
     commands:
+      - cd terraform/provision_resources
       - echo "Executing terraform init..."
       - terraform init
 

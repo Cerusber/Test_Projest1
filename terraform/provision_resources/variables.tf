@@ -17,7 +17,7 @@ variable "region" {
 #ECR image name
 variable "app_name" {
   type    = string
-  default = "my-app"
+  default = "my-app-ecr"
 }
 
 #RDS config

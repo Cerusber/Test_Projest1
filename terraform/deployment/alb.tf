@@ -12,10 +12,11 @@ resource "aws_lb" "my_lb" {
 }
 
 resource "aws_lb_target_group" "my_target_group" {
-  name     = "${var.app_name}-tg"
-  port     = 8080
-  protocol = "HTTP"
-  vpc_id   = data.aws_vpc.default.id
+  name        = "${var.app_name}-tg"
+  port        = 8080
+  protocol    = "HTTP"
+  vpc_id      = data.aws_vpc.default.id
+  target_type = "ip"
 
   health_check {
     path                = "/"

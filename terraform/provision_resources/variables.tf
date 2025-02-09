@@ -26,7 +26,6 @@ variable "db-username" {
   default = "jaroslav" #move to ssm
 }
 
-
 variable "db-password" {
   type    = string
   default = "123456789" #move to ssm

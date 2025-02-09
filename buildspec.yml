@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     REGION: "eu-west-1"
-    REPOSITORY_NAME: "my-app"
+    REPOSITORY_NAME: "my-app-ecr"
     ACCOUNT_ID: "605134467471"
     IMAGE_TAG: "wagtail"
 

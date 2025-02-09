@@ -1,8 +1,9 @@
 resource "aws_db_instance" "rds" {
   engine                 = "postgres"
+  engine_version         = "16.3"
   db_name                = var.database_name
   identifier             = "${var.database_name}-id"
-  instance_class         = "db.t2.micro"
+  instance_class         = "db.t3.micro"
   allocated_storage      = 20
   publicly_accessible    = true
   username               = var.db-username

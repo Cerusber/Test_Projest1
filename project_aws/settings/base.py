@@ -88,9 +88,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'myappdb',
-        'USER': 'myadmin',
-        'PASSWORD': 'mypassword123',
-        'HOST': 'myappdb-instance.c7abc123456.eu-west-1.rds.amazonaws.com',
+        'USER': 'jaroslav',
+        'PASSWORD': '123456789',
+        'HOST': 'myappdb-id.cteym88o24wx.eu-west-1.rds.amazonaws.com:5432',
         'PORT': '5432',
     }
 }

@@ -16,7 +16,7 @@ variable "app_name" {
 
 variable "ecr_image" {
   type    = string
-  default = "605134467471.dkr.ecr.eu-west-1.amazonaws.com/my-app:wagtail"
+  default = "605134467471.dkr.ecr.eu-west-1.amazonaws.com/my-app-ecr:wagtail"
 }
 
 variable "ecs_role" {

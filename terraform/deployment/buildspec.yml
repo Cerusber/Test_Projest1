@@ -35,7 +35,7 @@ phases:
       - echo "Executing terraform apply..."
       - terraform apply -auto-approve
       - echo "Terraform apply completed. Waiting for 10 minutes before destroy..."
-      - sleep 900
+      - sleep 600
 
   post_build:
     commands:

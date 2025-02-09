@@ -23,3 +23,9 @@ variable "ecs_role" {
   type    = string
   default = "arn:aws:iam::605134467471:role/Role_Terraform_Provision_Resources"
 }
+
+#Config for service
+variable "subnet_ids" {
+  type        = list(string)
+  description = ["subnet-0a67ccfdea128f704", "subnet-0acc4dd9d13159dd6"]
+}

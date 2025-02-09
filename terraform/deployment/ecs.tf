@@ -52,7 +52,7 @@ resource "aws_ecs_service" "ecs-service" {
   name            = "${var.app_name}-service"
   cluster         = aws_ecs_cluster.ecs-cluster.id
   task_definition = aws_ecs_task_definition.aws-ecs-task.arn
-  desired_count   = 2
+  desired_count   = 1
 
   launch_type = "FARGATE"
 

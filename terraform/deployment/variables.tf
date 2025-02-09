@@ -27,5 +27,5 @@ variable "ecs_role" {
 #Config for service
 variable "subnet_ids" {
   type    = list(string)
-  default = ["subnet-0a67ccfdea128f704"]
+  default = ["subnet-0a67ccfdea128f704", "subnet-0acc4dd9d13159dd6"]
 }

@@ -34,5 +34,5 @@ variable "db-password" {
 
 variable "database_name" {
   type    = string
-  default = "my-app-db"
+  default = "myappdb"
 }

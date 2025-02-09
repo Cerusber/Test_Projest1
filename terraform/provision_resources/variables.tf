@@ -17,5 +17,21 @@ variable "region" {
 #ECR image name
 variable "app_name" {
   type    = string
-  default = "my-app"
+  default = "my-app-ecr"
+}
+
+#RDS config
+variable "db-username" {
+  type    = string
+  default = "jaroslav" #move to ssm
+}
+
+variable "db-password" {
+  type    = string
+  default = "123456789" #move to ssm
+}
+
+variable "database_name" {
+  type    = string
+  default = "myappdb"
 }

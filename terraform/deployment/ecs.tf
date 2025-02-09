@@ -63,7 +63,7 @@ resource "aws_ecs_service" "ecs-service" {
   }
 
   load_balancer {
-    target_group_arn = aws_lb_target_group.my_target_group.id # Attach to an Application Load Balancer
+    target_group_arn = aws_lb_target_group.my_target_group.arn # Attach to an Application Load Balancer
     container_name   = "${var.app_name}-container"
     container_port   = 8080
   }

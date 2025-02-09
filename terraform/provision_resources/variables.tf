@@ -29,7 +29,7 @@ variable "db-username" {
 
 variable "db-password" {
   type    = string
-  default = "12345" #move to ssm
+  default = "123456789" #move to ssm
 }
 
 variable "database_name" {

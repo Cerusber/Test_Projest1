@@ -19,3 +19,20 @@ variable "app_name" {
   type    = string
   default = "my-app"
 }
+
+#RDS config
+variable "db-username" {
+  type    = string
+  default = "jaroslav" #move to ssm
+}
+
+
+variable "db-password" {
+  type    = string
+  default = "12345" #move to ssm
+}
+
+variable "database_name" {
+  type    = string
+  default = "my_app_db"
+}

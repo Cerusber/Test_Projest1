@@ -49,6 +49,30 @@ resource "aws_ecs_task_definition" "aws-ecs-task" {
 }
 
 
-data "aws_ecs_task_definition" "main" {
-  task_definition = aws_ecs_task_definition.aws-ecs-task.family
+resource "aws_ecs_service" "ecs-service" {
+  name            = "${var.app_name}-service"
+  cluster         = aws_ecs_cluster.ecs-cluster.id
+  task_definition = aws_ecs_task_definition.aws-ecs-task.arn
+  desired_count   = 2
+
+  launch_type = "FARGATE"
+
+  network_configuration {
+    subnets          = var.subnet_ids                      # Specify the subnets for your ECS tasks
+    security_groups  = [aws_security_group.ecs_service.id] # Use a security group for your service
+    assign_public_ip = true                                # Set to false if you're not using a public subnet
+  }
+
+  load_balancer {
+    target_group_arn = aws_lb_target_group.my_target_group.arn # Attach to an Application Load Balancer
+    container_name   = "${var.app_name}-container"
+    container_port   = 8080
+  }
+
+  deployment_minimum_healthy_percent = 50
+  deployment_maximum_percent         = 200
+
+  tags = {
+    Environment = var.tag-name
+  }
 }

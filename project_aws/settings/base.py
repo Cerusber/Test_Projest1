@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'myappdb',
         'USER': 'jaroslav',
         'PASSWORD': '123456789',
-        'HOST': 'myappdb-id.cteym88o24wx.eu-west-1.rds.amazonaws.com:5432',
+        'HOST': 'myappdb-id.cteym88o24wx.eu-west-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
